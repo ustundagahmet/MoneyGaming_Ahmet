@@ -1,5 +1,6 @@
 package com.moneygaming.tests;
 
+import com.moneygaming.utilities.WebDriverFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,8 +12,8 @@ public class Test1 {
 
     @BeforeMethod
     public void setUp(){
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
 
     }
